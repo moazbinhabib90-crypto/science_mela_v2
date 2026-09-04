@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>বিজ্ঞান মেলা ২০২৬ — শিনেপুকুর তানযীমুল উম্মাহ দাখিল মাদ্রাসা</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --primary:#0d9488;
+    --primary-dark:#0f766e;
+    --primary-light:#5eead4;
+    --accent:#f59e0b;
+    --accent-2:#dc2626;
+    --pink:#ec4899;
+    --purple:#8b5cf6;
+    --indigo:#6366f1;
+    --bg-1:#f0fdfa;
+    --bg-2:#ecfeff;
+    --bg-3:#f0f9ff;
+    --ink:#0f172a;
+    --ink-soft:#475569;
+    --card:#ffffff;
+    --shadow:0 10px 30px rgba(13,148,136,.12);
+    --shadow-lg:0 25px 60px rgba(13,148,136,.25);
+  }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Noto Sans Bengali','Hind Siliguri',sans-serif;
+    background:var(--bg-1);
+    color:var(--ink);
+    line-height:1.85;
+    overflow-x:hidden;
+    cursor:default;
+  }
+
+  /* ============ CUSTOM CURSOR ============ */
+  .cursor-dot{
+    position:fixed;
+    width:10px;height:10px;
+    background:var(--primary);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:99999;
+    transform:translate(-50%,-50%);
+    transition:width .2s,height .2s,background .2s;
+    mix-blend-mode:difference;
+    box-shadow:0 0 20px var(--primary);
+  }
+  .cursor-ring{
+    position:fixed;
+    width:40px;height:40px;
+    border:2px solid var(--primary);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:99998;
+    transform:translate(-50%,-50%);
+    transition:all .15s ease-out;
+  }
+  @media (max-width:768px){ .cursor-dot,.cursor-ring{display:none;} }
+
+  /* ============ ANIMATED BACKGROUND ============ */
+  .bg-blobs{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.35;
+    animation:float 20s ease-in-out infinite;
+  }
+  .blob:nth-child(1){
+    width:400px;height:400px;
+    background:radial-gradient(circle,#5eead4,transparent);
+    top:-100px;left:-100px;
+    animation-delay:0s;
+  }
+  .blob:nth-child(2){
+    width:500px;height:500px;
+    background:radial-gradient(circle,#fbbf24,transparent);
+    top:30%;right:-150px;
+    animation-delay:-7s;
+  }
+  .blob:nth-child(3){
+    width:450px;height:450px;
+    background:radial-gradient(circle,#a78bfa,transparent);
+    bottom:-150px;left:20%;
+    animation-delay:-14s;
+  }
+  @keyframes float{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    33%{ transform:translate(60px,-50px) scale(1.1); }
+    66%{ transform:translate(-40px,40px) scale(.95); }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f766e 0%,#0d9488 40%,#06b6d4 80%,#0891b2 100%);
+    background-size:300% 300%;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:5rem 1.5rem 8rem;
+    text-align:center;
+    overflow:hidden;
+    animation:bgshift 12s ease infinite;
+  }
+  @keyframes bgshift{
+    0%,100%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.08) 0%,transparent 70%);
+    animation:pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:.4; transform:scale(1); }
+    50%{ opacity:.8; transform:scale(1.1); }
+  }
+
+  .floating-icon{
+    position:absolute;
+    font-size:2.5rem;
+    opacity:.25;
+    animation:floatIcon 8s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .floating-icon:nth-child(1){ top:10%;left:10%;animation-delay:0s; }
+  .floating-icon:nth-child(2){ top:20%;right:15%;animation-delay:-2s;font-size:3rem; }
+  .floating-icon:nth-child(3){ top:60%;left:8%;animation-delay:-4s;font-size:2.2rem; }
+  .floating-icon:nth-child(4){ top:70%;right:12%;animation-delay:-6s;font-size:3.5rem; }
+  .floating-icon:nth-child(5){ top:40%;left:50%;animation-delay:-3s;font-size:2.8rem; }
+  .floating-icon:nth-child(6){ top:15%;left:45%;animation-delay:-5s;font-size:2rem; }
+  @keyframes floatIcon{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%{ transform:translateY(-30px) rotate(15deg); }
+  }
+
+  .particles{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .particle{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 10px rgba(255,255,255,.6);
+    animation:rise linear infinite;
+  }
+  @keyframes rise{
+    0%{ transform:translateY(100vh) translateX(0); opacity:0; }
+    10%{ opacity:1; }
+    90%{ opacity:1; }
+    100%{ transform:translateY(-100px) translateX(50px); opacity:0; }
+  }
+
+  .hero-content{ position:relative; z-index:5; max-width:850px; }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.3);
+    padding:.6rem 1.4rem;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.95rem;
+    margin-bottom:1.5rem;
+    animation:slideDown 1s ease .2s both;
+  }
+  .hero-badge .pulse-dot{
+    width:10px;height:10px;
+    background:#22c55e;
+    border-radius:50%;
+    box-shadow:0 0 0 0 rgba(34,197,94,.7);
+    animation:dotPulse 2s infinite;
+  }
+  @keyframes dotPulse{
+    0%{ box-shadow:0 0 0 0 rgba(34,197,94,.7); }
+    70%{ box-shadow:0 0 0 12px rgba(34,197,94,0); }
+    100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
+  }
+
+  .hero h1{
+    font-size:clamp(2.2rem,6vw,4rem);
+    font-weight:900;
+    margin-bottom:1.25rem;
+    text-shadow:3px 6px 20px rgba(0,0,0,.3);
+    letter-spacing:1px;
+    line-height:1.15;
+    animation:slideDown 1s ease .4s both;
+  }
+  .hero h1 .giggle{
+    display:inline-block;
+    background:linear-gradient(90deg,#fbbf24,#f97316,#ef4444,#f59e0b);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shimmer 3s linear infinite;
+  }
+  @keyframes shimmer{
+    0%,100%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+  }
+  .hero .subtitle{
+    font-size:clamp(1.05rem,2.2vw,1.35rem);
+    font-weight:500;
+    opacity:.96;
+    max-width:760px;
+    margin:0 auto 2rem;
+    animation:slideDown 1s ease .6s both;
+  }
+  .hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1.5rem 2.5rem;
+    margin-top:2.5rem;
+    animation:slideUp 1s ease 1s both;
+  }
+  .hero-stat{
+    text-align:center;
+  }
+  .hero-stat .num{
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(2rem,4vw,3rem);
+    font-weight:800;
+    color:#fbbf24;
+    display:block;
+    text-shadow:0 4px 12px rgba(251,191,36,.4);
+  }
+  .hero-stat .lbl{
+    font-size:.95rem;
+    opacity:.9;
+    margin-top:.25rem;
+  }
+  @keyframes slideDown{
+    from{ opacity:0; transform:translateY(-30px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  @keyframes slideUp{
+    from{ opacity:0; transform:translateY(30px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .scroll-indicator{
+    position:absolute;
+    bottom:1.5rem;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:5;
+    color:white;
+    text-align:center;
+    animation:bounce 2s infinite;
+  }
+  .scroll-indicator .mouse{
+    width:30px;height:50px;
+    border:2px solid white;
+    border-radius:15px;
+    margin:0 auto .5rem;
+    position:relative;
+  }
+  .scroll-indicator .wheel{
+    width:4px;height:8px;
+    background:white;
+    border-radius:2px;
+    position:absolute;
+    top:8px;left:50%;
+    transform:translateX(-50%);
+    animation:wheel 1.5s infinite;
+  }
+  @keyframes wheel{
+    0%{ opacity:1; transform:translate(-50%,0); }
+    100%{ opacity:0; transform:translate(-50%,18px); }
+  }
+  @keyframes bounce{
+    0%,100%{ transform:translateX(-50%) translateY(0); }
+    50%{ transform:translateX(-50%) translateY(-8px); }
+  }
+
+  /* WAVE DIVIDER */
+  .wave{
+    position:relative;
+    height:80px;
+    margin-top:-80px;
+    z-index:10;
+  }
+  .wave svg{
+    position:absolute;
+    bottom:0;
+    width:100%;height:100%;
+  }
+
+  /* ============ NAV ============ */
+  nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:999;
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(13,148,136,.15);
+    padding:.85rem 1.5rem;
+    box-shadow:0 4px 20px rgba(13,148,136,.08);
+    transform:translateY(-100%);
+    animation:slideDown .8s ease 1.5s forwards;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.4rem 1.5rem;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  nav a{
+    text-decoration:none;
+    color:var(--primary-dark);
+    font-weight:600;
+    font-size:.95rem;
+    padding:.45rem .95rem;
+    border-radius:10px;
+    transition:all .25s ease;
+    position:relative;
+  }
+  nav a:hover{
+    background:var(--primary);
+    color:white;
+    transform:translateY(-2px);
+  }
+  nav a::after{
+    content:'';
+    position:absolute;
+    bottom:-3px;left:50%;
+    width:0;height:2px;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    transition:all .3s ease;
+    transform:translateX(-50%);
+  }
+  nav a:hover::after{ width:80%; }
+
+  /* ============ SECTION ============ */
+  section{
+    max-width:1200px;
+    margin:4rem auto;
+    padding:0 1.5rem;
+    position:relative;
+  }
+  .section-title{
+    text-align:center;
+    margin-bottom:3rem;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .9s ease;
+  }
+  .section-title.reveal{ opacity:1; transform:translateY(0); }
+  .section-title h2{
+    font-size:clamp(1.8rem,3.8vw,2.6rem);
+    color:var(--primary-dark);
+    font-weight:800;
+    display:inline-block;
+    position:relative;
+    padding:0 1.5rem;
+    margin-bottom:.6rem;
+  }
+  .section-title h2::before,.section-title h2::after{
+    content:'';
+    position:absolute;
+    top:55%;
+    width:70px;
+    height:3px;
+    background:linear-gradient(90deg,var(--primary),transparent);
+    border-radius:3px;
+  }
+  .section-title h2::before{ right:100%; }
+  .section-title h2::after { left:100%; background:linear-gradient(90deg,transparent,var(--primary)); }
+  .section-title p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    max-width:760px;
+    margin:0 auto;
+    font-weight:500;
+  }
+
+  /* ============ INTRO ============ */
+  .intro-card{
+    background:var(--card);
+    border-radius:24px;
+    padding:3rem 2.5rem;
+    box-shadow:var(--shadow-lg);
+    border:1px solid rgba(13,148,136,.15);
+    position:relative;
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1s ease;
+  }
+  .intro-card.reveal{ opacity:1; transform:translateY(0); }
+  .intro-card::before{
+    content:'🔬';
+    position:absolute;
+    top:-30px;left:40px;
+    font-size:3rem;
+    background:white;
+    padding:8px 18px;
+    border-radius:50%;
+    box-shadow:0 8px 24px rgba(13,148,136,.25);
+    animation:wiggle 3s ease infinite;
+  }
+  @keyframes wiggle{
+    0%,100%{ transform:rotate(0deg); }
+    25%{ transform:rotate(-10deg); }
+    75%{ transform:rotate(10deg); }
+  }
+  .intro-card .deco{
+    position:absolute;
+    top:30px;right:30px;
+    font-size:5rem;
+    opacity:.08;
+    color:var(--primary);
+    transform:rotate(15deg);
+  }
+  .intro-card p{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    margin-bottom:1.15rem;
+    text-align:justify;
+  }
+  .intro-card p:last-child{ margin-bottom:0; }
+  .intro-card strong{ color:var(--primary-dark); font-weight:700; }
+  .intro-card .highlight{
+    background:linear-gradient(120deg,rgba(245,158,11,.2) 0%,rgba(245,158,11,.4) 50%,rgba(245,158,11,.2) 100%);
+    background-size:200% auto;
+    padding:2px 8px;
+    border-radius:4px;
+    font-weight:700;
+    color:#92400e;
+    animation:highlightShine 3s linear infinite;
+  }
+  @keyframes highlightShine{
+    0%,100%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+  }
+
+  /* ============ STATS COUNTER ============ */
+  .stats-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1.5rem;
+    margin:3rem auto;
+    max-width:1100px;
+  }
+  .stat-box{
+    background:linear-gradient(135deg,white,var(--bg-1));
+    padding:2rem 1.25rem;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid rgba(13,148,136,.15);
+    box-shadow:var(--shadow);
+    transition:all .4s ease;
+    opacity:0;
+    transform:translateY(40px) scale(.95);
+  }
+  .stat-box.reveal{ opacity:1; transform:translateY(0) scale(1); }
+  .stat-box:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:var(--shadow-lg);
+  }
+  .stat-box .ico{
+    font-size:2.5rem;
+    margin-bottom:.5rem;
+    display:block;
+  }
+  .stat-box .counter{
+    font-family:'Poppins',sans-serif;
+    font-size:2.5rem;
+    font-weight:800;
+    color:var(--primary-dark);
+    display:inline-block;
+    line-height:1;
+  }
+  .stat-box .plus{ color:var(--accent); font-weight:800; font-size:2rem; }
+  .stat-box .lbl{
+    margin-top:.5rem;
+    color:var(--ink-soft);
+    font-weight:600;
+    font-size:1rem;
+  }
+
+  /* ============ IMPORTANCE CARDS ============ */
+  .imp-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.75rem;
+  }
+  .imp-card{
+    background:white;
+    padding:2rem 1.75rem;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    border-top:5px solid var(--primary);
+    transition:all .4s cubic-bezier(.175,.885,.32,1.275);
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(50px);
+  }
+  .imp-card.reveal{ opacity:1; transform:translateY(0); }
+  .imp-card::after{
+    content:'';
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    background:linear-gradient(135deg,transparent 60%,rgba(13,148,136,.05) 100%);
+    pointer-events:none;
+  }
+  .imp-card:hover{
+    transform:translateY(-12px) rotate(-1deg);
+    box-shadow:0 20px 45px rgba(13,148,136,.25);
+  }
+  .imp-card .icon{
+    width:65px;height:65px;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    margin-bottom:1.25rem;
+    transition:all .4s ease;
+    box-shadow:0 8px 20px rgba(13,148,136,.35);
+  }
+  .imp-card:hover .icon{ transform:rotate(360deg) scale(1.1); }
+  .imp-card h3{
+    color:var(--primary-dark);
+    font-size:1.25rem;
+    margin-bottom:.7rem;
+    font-weight:700;
+  }
+  .imp-card p{
+    color:var(--ink-soft);
+    font-size:.97rem;
+    line-height:1.75;
+  }
+  .imp-card:nth-child(2){ border-top-color:var(--accent); }
+  .imp-card:nth-child(2) .icon{ background:linear-gradient(135deg,var(--accent),#d97706); box-shadow:0 8px 20px rgba(245,158,11,.35); }
+  .imp-card:nth-child(3){ border-top-color:var(--accent-2); }
+  .imp-card:nth-child(3) .icon{ background:linear-gradient(135deg,var(--accent-2),#b91c1c); box-shadow:0 8px 20px rgba(220,38,38,.35); }
+  .imp-card:nth-child(4){ border-top-color:var(--indigo); }
+  .imp-card:nth-child(4) .icon{ background:linear-gradient(135deg,var(--indigo),#4f46e5); box-shadow:0 8px 20px rgba(99,102,241,.35); }
+  .imp-card:nth-child(5){ border-top-color:var(--pink); }
+  .imp-card:nth-child(5) .icon{ background:linear-gradient(135deg,var(--pink),#db2777); box-shadow:0 8px 20px rgba(236,72,153,.35); }
+  .imp-card:nth-child(6){ border-top-color:#10b981; }
+  .imp-card:nth-child(6) .icon{ background:linear-gradient(135deg,#10b981,#059669); box-shadow:0 8px 20px rgba(16,185,129,.35); }
+
+  /* ============ MARQUEE ============ */
+  .marquee{
+    overflow:hidden;
+    background:linear-gradient(90deg,var(--primary-dark),var(--primary));
+    color:white;
+    padding:1rem 0;
+    margin:3rem 0;
+    border-radius:0;
+    position:relative;
+  }
+  .marquee-track{
+    display:flex;
+    gap:3rem;
+    animation:scrollMarquee 30s linear infinite;
+    white-space:nowrap;
+    width:max-content;
+  }
+  .marquee-track span{ font-weight:700; font-size:1.05rem; display:inline-flex; align-items:center; gap:.75rem; }
+  .marquee-track .dot{ color:var(--accent); font-size:1.5rem; }
+  @keyframes scrollMarquee{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+  }
+
+  /* ============ GALLERY ============ */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+    gap:1.5rem;
+  }
+  .gitem{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    cursor:pointer;
+    transition:all .5s cubic-bezier(.175,.885,.32,1.275);
+    aspect-ratio:4/3;
+    opacity:0;
+    transform:translateY(50px) scale(.95);
+  }
+  .gitem.reveal{ opacity:1; transform:translateY(0) scale(1); }
+  .gitem:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 20px 50px rgba(13,148,136,.3);
+  }
+  .gitem img{
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform .6s ease;
+    display:block;
+  }
+  .gitem:hover img{ transform:scale(1.12) rotate(1deg); }
+  .gitem .overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 40%,rgba(0,0,0,.85));
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:1.5rem 1.25rem;
+    color:white;
+    transform:translateY(15%);
+    transition:transform .4s ease;
+  }
+  .gitem:hover .overlay{ transform:translateY(0); }
+  .gitem .overlay h4{
+    font-size:1.15rem;
+    font-weight:700;
+    margin-bottom:.35rem;
+    transform:translateY(15px);
+    opacity:0;
+    transition:all .4s ease .1s;
+  }
+  .gitem .overlay p{
+    font-size:.9rem;
+    opacity:0;
+    transform:translateY(15px);
+    transition:all .4s ease .2s;
+  }
+  .gitem:hover .overlay h4,
+  .gitem:hover .overlay p{
+    transform:translateY(0);
+    opacity:.95;
+  }
+  .gitem .zoom-ico{
+    position:absolute;
+    top:1rem;right:1rem;
+    width:42px;height:42px;
+    background:rgba(255,255,255,.95);
+    color:var(--primary-dark);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+    opacity:0;
+    transform:scale(0) rotate(-180deg);
+    transition:all .4s cubic-bezier(.175,.885,.32,1.275);
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
+  }
+  .gitem:hover .zoom-ico{
+    opacity:1;
+    transform:scale(1) rotate(0deg);
+  }
+
+  /* ============ LIGHTBOX ============ */
+  .lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.96);
+    z-index:99999;
+    align-items:center;
+    justify-content:center;
+    padding:1rem;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+  }
+  .lightbox.active{
+    display:flex;
+    animation:fadeIn .4s ease;
+  }
+  @keyframes fadeIn{ from{opacity:0;} to{opacity:1;} }
+  .lightbox img{
+    max-width:95%;
+    max-height:88vh;
+    border-radius:14px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+    animation:zoomIn .4s ease;
+  }
+  @keyframes zoomIn{ from{transform:scale(.7); opacity:0;} to{transform:scale(1); opacity:1;} }
+  .lightbox .close{
+    position:absolute;
+    top:1.5rem;right:2rem;
+    color:white;
+    font-size:2.2rem;
+    cursor:pointer;
+    background:rgba(220,38,38,.9);
+    width:55px;height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    transition:all .25s;
+    box-shadow:0 6px 20px rgba(220,38,38,.4);
+  }
+  .lightbox .close:hover{ background:#b91c1c; transform:rotate(90deg) scale(1.1); }
+  .lightbox .caption{
+    position:absolute;
+    bottom:2rem;
+    left:50%;transform:translateX(-50%);
+    color:white;
+    text-align:center;
+    background:rgba(0,0,0,.55);
+    padding:.75rem 1.5rem;
+    border-radius:999px;
+    backdrop-filter:blur(8px);
+    font-weight:600;
+    font-size:1rem;
+  }
+
+  /* ============ TIMELINE ============ */
+  .timeline{
+    position:relative;
+    max-width:880px;
+    margin:3rem auto 1rem;
+    padding:1rem 0;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    top:0;bottom:0;
+    left:50%;
+    width:4px;
+    background:linear-gradient(180deg,var(--primary),var(--accent),var(--pink));
+    transform:translateX(-50%);
+    border-radius:2px;
+    box-shadow:0 0 15px rgba(13,148,136,.4);
+  }
+  .tl-item{
+    position:relative;
+    width:50%;
+    padding:1.25rem 2.5rem;
+    box-sizing:border-box;
+    opacity:0;
+    transform:translateX(-50px);
+    transition:all .8s ease;
+  }
+  .tl-item.reveal{ opacity:1; transform:translateX(0); }
+  .tl-item:nth-child(odd){ left:0; }
+  .tl-item:nth-child(even){ left:50%; transform:translateX(50px); }
+  .tl-item:nth-child(even).reveal{ transform:translateX(0); }
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    top:1.5rem;
+    width:22px;height:22px;
+    background:white;
+    border:4px solid var(--primary);
+    border-radius:50%;
+    box-shadow:0 0 0 6px rgba(13,148,136,.2);
+    animation:pulseDot 2s infinite;
+  }
+  .tl-item:nth-child(odd)::before{ right:-11px; }
+  .tl-item:nth-child(even)::before{ left:-11px; }
+  @keyframes pulseDot{
+    0%,100%{ box-shadow:0 0 0 6px rgba(13,148,136,.2); }
+    50%{ box-shadow:0 0 0 14px rgba(13,148,136,0); }
+  }
+  .tl-content{
+    background:white;
+    padding:1.25rem 1.5rem;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    border-left:4px solid var(--primary);
+    transition:transform .3s;
+  }
+  .tl-item:hover .tl-content{ transform:scale(1.03); }
+  .tl-content h4{
+    color:var(--primary-dark);
+    font-weight:700;
+    font-size:1.1rem;
+    margin-bottom:.35rem;
+  }
+  .tl-content p{
+    color:var(--ink-soft);
+    font-size:.95rem;
+    line-height:1.7;
+  }
+  @media(max-width:768px){
+    .timeline::before{ left:30px; }
+    .tl-item,.tl-item:nth-child(odd),.tl-item:nth-child(even){
+      width:100%;left:0;padding-left:60px;padding-right:1rem;
+      transform:translateX(0);
+    }
+    .tl-item:nth-child(odd)::before,
+    .tl-item:nth-child(even)::before{ left:19px;right:auto; }
+  }
+
+  /* ============ CLOSING ============ */
+  .closing{
+    background:linear-gradient(135deg,#0f766e 0%,#06b6d4 50%,#0d9488 100%);
+    background-size:200% 200%;
+    color:white;
+    border-radius:28px;
+    padding:3.5rem 2.5rem;
+    text-align:center;
+    margin:4rem auto;
+    max-width:1100px;
+    box-shadow:var(--shadow-lg);
+    position:relative;
+    overflow:hidden;
+    animation:bgshift 8s ease infinite;
+    opacity:0;
+    transform:scale(.95);
+    transition:all .9s ease;
+  }
+  .closing.reveal{ opacity:1; transform:scale(1); }
+  .closing::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(255,255,255,.1) 0%,transparent 50%),
+      radial-gradient(circle at 80% 70%,rgba(255,255,255,.1) 0%,transparent 50%);
+    animation:pulse 5s ease-in-out infinite;
+  }
+  .closing > *{ position:relative; z-index:2; }
+  .closing h2{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    margin-bottom:1.25rem;
+    font-weight:900;
+    text-shadow:2px 4px 12px rgba(0,0,0,.3);
+  }
+  .closing p{
+    font-size:1.12rem;
+    opacity:.96;
+    max-width:820px;
+    margin:0 auto 2rem;
+    line-height:1.85;
+  }
+  .signature{
+    display:inline-block;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(8px);
+    padding:.85rem 1.75rem;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.35);
+    font-weight:700;
+    transition:all .3s;
+  }
+  .signature:hover{
+    background:rgba(255,255,255,.3);
+    transform:translateY(-3px);
+  }
+
+  /* ============ FAB ============ */
+  .fab{
+    position:fixed;
+    bottom:2rem;right:2rem;
+    width:55px;height:55px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(13,148,136,.5);
+    z-index:998;
+    transition:all .3s;
+    animation:bob 3s ease-in-out infinite;
+    text-decoration:none;
+  }
+  @keyframes bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+  }
+  .fab:hover{ transform:scale(1.15) rotate(360deg); animation:none; }
+
+  /* ============ FOOTER ============ */
+  footer{
+    text-align:center;
+    padding:2.5rem 1.5rem 1.5rem;
+    color:var(--ink-soft);
+    font-size:.95rem;
+    background:linear-gradient(to top,rgba(13,148,136,.05),transparent);
+    border-top:2px dashed rgba(13,148,136,.2);
+    margin-top:4rem;
+  }
+  footer .heart{ color:var(--accent-2); display:inline-block; animation:beat 1.2s infinite; }
+  @keyframes beat{
+    0%,100%{ transform:scale(1); }
+    25%,75%{ transform:scale(1.2); }
+  }
+  footer p{ margin:.5rem 0; font-weight:500; }
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:640px){
+    .hero{ padding:4rem 1rem 6rem; min-height:90vh; }
+    section{ margin:2.5rem auto; padding:0 1rem; }
+    .intro-card{ padding:2rem 1.5rem; }
+    .gallery{ grid-template-columns:1fr; }
+    nav ul{ gap:.25rem .8rem; }
+    nav a{ font-size:.85rem; padding:.3rem .6rem; }
+    .closing{ padding:2.5rem 1.5rem; border-radius:20px; }
+    .hero-stats{ gap:1rem 1.5rem; }
+  }
+
+/* hide-reveal default */
+.imp-card,.gitem,.stat-box,.section-title,.intro-card,.timeline .tl-item,.closing{ will-change:transform,opacity; }
+</style>
+</head>
+<body>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div class="bg-blobs">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="floating-icon">⚛️</div>
+  <div class="floating-icon">🧠</div>
+  <div class="floating-icon">🧪</div>
+  <div class="floating-icon">🔬</div>
+  <div class="floating-icon">🌿</div>
+  <div class="floating-icon">🦠</div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge"><span class="pulse-dot"></span> ✨ বিজ্ঞানের আলোয় আলোকিত ২০২৬</div>
+    <h1>বিজ্ঞান মেলা — <span class="giggle">২০২৬</span></h1>
+    <p class="subtitle">শিনেপুকুর তানযীমুল উম্মাহ দাখিল মাদ্রাসার বার্ষিক বিজ্ঞান প্রদর্শনী — শিক্ষার্থীদের সৃজনশীলতা ও গবেষণার এক উজ্জ্বল প্রকাশ</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num" data-target="9">0</span><span class="lbl">প্রকল্প</span></div>
+      <div class="hero-stat"><span class="num" data-target="40">0</span><span class="lbl">ছাত্র-ছাত্রী</span></div>
+      <div class="hero-stat"><span class="num" data-target="6">0</span><span class="lbl">বিষয়</span></div>
+      <div class="hero-stat"><span class="num" data-target="100">0</span><span class="lbl">% উৎসাহ</span></div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-indicator">
+    <div class="mouse"><div class="wheel"></div></div>
+    <span style="font-size:.85rem;">নিচে স্ক্রল করুন</span>
+  </a>
+</header>
+
+<div class="wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path fill="var(--bg-1)" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"></path>
+  </svg>
+</div>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#about">পরিচিতি</a></li>
+    <li><a href="#stats">পরিসংখ্যান</a></li>
+    <li><a href="#importance">গুরুত্ব</a></li>
+    <li><a href="#program">কার্যক্রম</a></li>
+    <li><a href="#gallery">গ্যালারি</a></li>
+    <li><a href="#closing">সমাপ্তি</a></li>
+  </ul>
+</nav>
+
+<!-- INTRO -->
+<section id="about">
+  <div class="section-title">
+    <h2>🏫 বিজ্ঞান মেলা পরিচিতি</h2>
+    <p>জ্ঞানের আলোয় আলোকিত একটি মাদ্রাসার বার্ষিক বিজ্ঞান প্রদর্শনীর এক ঝলক</p>
+  </div>
+  <div class="intro-card">
+    <span class="deco">📚</span>
+    <p>প্রিয় পাঠক, এই পৃষ্ঠায় আপনাকে স্বাগতম। <strong>শিনেপুকুর তানযীমুল উম্মাহ দাখিল মাদ্রাসা</strong>-র আয়োজিত বার্ষিক বিজ্ঞান মেলায় শিক্ষার্থীরা নিজস্ব পর্যবেক্ষণ, গবেষণা ও সৃজনশীলতার মাধ্যমে তৈরি করেছে বিভিন্ন প্রকল্প — মানবদেহের গঠন থেকে শুরু করে <span class="highlight">পরমাণুর মডেল, ভিটামিনের উৎস, রেচনতন্ত্রের চিত্র এবং সিরিঞ্জ-চালিত রোবট আর্ম</span> পর্যন্ত।</p>
+    <p>ছাত্রীরা নিজেদের পোস্টার উপস্থাপন করছে, শিক্ষক ও বিচারকমণ্ডলী প্রশ্ন করছেন এবং শিক্ষার্থীরা অধ্যবসায়ের সাথে উত্তর দিচ্ছে — এমনই এক চিত্র ফুটে উঠেছে প্রতিটি মুহূর্তে। এই বিজ্ঞান মেলা শুধু শিক্ষার্থীদের নয়, পুরো শিক্ষা প্রতিষ্ঠানের জন্য এক <strong>গৌরবের মুহূর্ত</strong>।</p>
+    <p>বিজ্ঞান শেখা মানে শুধু বই পড়া নয় — বিজ্ঞান শেখা মানে <strong>প্রশ্ন করতে শেখা, উত্তর খুঁজতে শেখা এবং বাস্তবে প্রয়োগ করতে শেখা</strong>। আর এই বিজ্ঞান মেলা ঠিক সেই শিক্ষারই এক উজ্জ্বল প্রকাশ।</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="section-title">
+    <h2>📊 এক নজরে এবারের মেলা</h2>
+    <p>সংখ্যার চোখে বিজ্ঞান মেলার চিত্র</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box"><span class="ico">📁</span><span class="counter" data-count="9">0</span><span class="plus">+</span><div class="lbl">মোট প্রকল্প</div></div>
+    <div class="stat-box"><span class="ico">👩‍🎓</span><span class="counter" data-count="40">0</span><span class="plus">+</span><div class="lbl">অংশগ্রহণকারী</div></div>
+    <div class="stat-box"><span class="ico">🧑‍🏫</span><span class="counter" data-count="8">0</span><span class="plus">+</span><div class="lbl">বিচারকমণ্ডলী</div></div>
+    <div class="stat-box"><span class="ico">🏆</span><span class="counter" data-count="3">0</span><div class="lbl">পুরস্কার বিভাগ</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>⚛️ পরমাণুর গঠন</span><span class="dot">●</span>
+    <span>🧠 মস্তিষ্কের গঠন</span><span class="dot">●</span>
+    <span>🥕 ভিটামিনের উৎস</span><span class="dot">●</span>
+    <span>🫘 রেচনতন্ত্র</span><span class="dot">●</span>
+    <span>🦾 হাইড্রোলিক রোবট আর্ম</span><span class="dot">●</span>
+    <span>📐 গণিতের ব্যবহারিক প্রয়োগ</span><span class="dot">●</span>
+    <span>⚛️ পরমাণুর গঠন</span><span class="dot">●</span>
+    <span>🧠 মস্তিষ্কের গঠন</span><span class="dot">●</span>
+    <span>🥕 ভিটামিনের উৎস</span><span class="dot">●</span>
+    <span>🫘 রেচনতন্ত্র</span><span class="dot">●</span>
+    <span>🦾 হাইড্রোলিক রোবট আর্ম</span><span class="dot">●</span>
+    <span>📐 গণিতের ব্যবহারিক প্রয়োগ</span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- IMPORTANCE -->
+<section id="importance">
+  <div class="section-title">
+    <h2>💡 বিজ্ঞান মেলার গুরুত্ব</h2>
+    <p>কেন বিজ্ঞান মেলা শিক্ষার্থীদের জীবনে অপরিহার্য?</p>
+  </div>
+  <div class="imp-grid">
+    <div class="imp-card">
+      <div class="icon">🧠</div>
+      <h3>চিন্তা শক্তি বৃদ্ধি</h3>
+      <p>বিজ্ঞান মেলায় অংশগ্রহণ করলে শিক্ষার্থীদের বিশ্লেষণধর্মী চিন্তা ও সমস্যা সমাধানের দক্ষতা তৈরি হয়। তারা শিখে কীভাবে একটি সমস্যাকে ছোট ছোট অংশে ভাগ করে সমাধান করতে হয়।</p>
+    </div>
+    <div class="imp-card">
+      <div class="icon">🔬</div>
+      <h3>হাতে-কলমে শেখা</h3>
+      <p>বই পড়ার চেয়ে বাস্তবে মডেল তৈরি করলে শিক্ষার্থীরা বিষয়টি আরও গভীরভাবে বুঝতে পারে। পরমাণু, মস্তিষ্ক বা ভিটামিনের মতো জটিল বিষয়ও চিত্রের মাধ্যমে সহজ হয়ে যায়।</p>
+    </div>
+    <div class="imp-card">
+      <div class="icon">🎤</div>
+      <h3>উপস্থাপন দক্ষতা</h3>
+      <p>বিচারক ও দর্শকদের সামনে নিজের প্রকল্প উপস্থাপন করার মাধ্যমে শিক্ষার্থীরা আত্মবিশ্বাস অর্জন করে এবং জনসম্মুখে কথা বলার অভ্যাস গড়ে তোলে — যা ভবিষ্যত জীবনে অত্যন্ত কাজে লাগে।</p>
+    </div>
+    <div class="imp-card">
+      <div class="icon">👥</div>
+      <h3>দলগত সহযোগিতা</h3>
+      <p>একটি প্রকল্প তৈরিতে একাধিক শিক্ষার্থী একসঙ্গে কাজ করে — এতে তারা শিখে দলগত কাজের মূল্য, পরস্পরের মতামতকে সম্মান করা এবং একসঙ্গে লক্ষ্য অর্জনের আনন্দ।</p>
+    </div>
+    <div class="imp-card">
+      <div class="icon">💡</div>
+      <h3>সৃজনশীলতা ও উদ্ভাবন</h3>
+      <p>নিজে মডেল তৈরি, পোস্টার ডিজাইন ও ব্যাখ্যা প্রদানের মাধ্যমে শিক্ষার্থীরা তাদের সৃজনশীল ক্ষমতা বিকশিত করে এবং নতুন কিছু উদ্ভাবনের সাহস পায়।</p>
+    </div>
+    <div class="imp-card">
+      <div class="icon">🌱</div>
+      <h3>ভবিষ্যতের ভিত্তি</h3>
+      <p>বিজ্ঞানের প্রতি আগ্রহ থেকেই জন্ম নেয় বিজ্ঞানী, প্রকৌশলী, চিকিৎসকের স্বপ্ন। বিজ্ঞান মেলা শিক্ষার্থীদের মধ্যে সেই স্বপ্নকে একটু একটু করে বাস্তবে রূপ দেয়।</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="program">
+  <div class="section-title">
+    <h2>📅 মেলার কার্যক্রম</h2>
+    <p>সকাল থেকে সন্ধ্যা পর্যন্ত বিজ্ঞানের এক অপার আনন্দযাত্রা</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-content">
+        <h4>🌅 সকাল ৯:০০ — উদ্বোধনী অনুষ্ঠান</h4>
+        <p>প্রধান অতিথির বক্তৃতা, কুরআন তিলাওয়াত ও জাতীয় সংগীতের মাধ্যমে বিজ্ঞান মেলার শুভ সূচনা।</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-content">
+        <h4>🔍 সকাল ১০:০০ — পোস্টার উপস্থাপনা</h4>
+        <p>ছাত্রীরা নিজেদের তৈরি পোস্টার নিয়ে দর্শক ও বিচারকদের সামনে বিষয়ভিত্তিক ব্যাখ্যা উপস্থাপন করেন।</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-content">
+        <h4>🦾 দুপুর ১২:০০ — মডেল প্রদর্শনী</h4>
+        <p>হাইড্রোলিক রোবট আর্মসহ বিভিন্ন কারিগরি মডেল শিক্ষার্থীরা নিজ হাতে চালিয়ে দেখান।</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-content">
+        <h4>🎯 বিকাল ২:০০ — কুইজ ও প্রশ্নোত্তর</h4>
+        <p>বিচারকমণ্ডলীর প্রশ্নের মুখোমুখি শিক্ষার্থীরা, জ্ঞানের ভিত্তিতে দেওয়া হয় পয়েন্ট ও প্রশংসাপত্র।</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-content">
+        <h4>🏆 বিকাল ৪:৩০ — পুরস্কার বিতরণ</h4>
+        <p>সেরা প্রকল্প, সেরা উপস্থাপনা ও সেরা দলগত কাজের জন্য পুরস্কার ও সনদ বিতরণ অনুষ্ঠিত হয়।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-title">
+    <h2>📸 মেলার ঝলক — ফটো গ্যালারি</h2>
+    <p>নিচের ছবিগুলোতে ক্লিক করলে বড় করে দেখা যাবে</p>
+  </div>
+  <div class="gallery">
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/souY2IVC" alt="মস্তিষ্কের গঠন উপস্থাপনা">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🧠 মস্তিষ্কের গঠন</h4>
+        <p>ছাত্রী নিজে এঁকেছেন মানব মস্তিষ্কের বিভিন্ন অংশ</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/cr0oEXK0" alt="পরমাণুর মডেল জিজ্ঞাসাবাদ">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>⚛️ পরমাণুর মডেল</h4>
+        <p>বিচারকমণ্ডলীর প্রশ্নের উত্তর দিচ্ছেন ছাত্রী</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/ANFjVqfa" alt="হাইড্রোলিক রোবট আর্ম">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🦾 হাইড্রোলিক রোবট আর্ম</h4>
+        <p>ছাত্রদের তৈরি যান্ত্রিক মডেল পরীক্ষা করছেন শিক্ষক</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/hNrgH8j1" alt="ভিটামিন পোস্টার সাক্ষাৎকার">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🥕 ভিটামিনের উৎস</h4>
+        <p>ছাত্রী সাক্ষাৎকার দিচ্ছেন নিজের প্রকল্প নিয়ে</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/nCVio2dM" alt="রোবট আর্ম ক্লোজআপ">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🔧 সিরিঞ্জ-চালিত রোবট আর্ম</h4>
+        <p>রঙিন সিরিঞ্জ ও নলের সাহায্যে তৈরি যান্ত্রিক বাহু</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/AlbGeNQT" alt="ভিটামিন পোস্টার গ্রুপ">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🌈 ভিটামিনের বর্ণিল পোস্টার</h4>
+        <p>চার ছাত্রীর যৌথ প্রকল্প — কাঁচামালের মডেল সহ</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/NBegj5PE" alt="পরমাণু গ্রুপ">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🟣 পরমাণুর মডেল — অষ্টম শ্রেণী</h4>
+        <p>দলের নাম: হযরত জয়নাব (রাঃ.) — গ্রুপ ফটো</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/ai1hQtGE" alt="মস্তিষ্ক গ্রুপ">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🧠 মস্তিষ্কের গঠন — গ্রুপ ফটো</h4>
+        <p>শান্তি চিহ্ন দেখিয়ে ছাত্রীদের একসঙ্গে উপস্থাপন</p>
+      </div>
+    </div>
+    <div class="gitem" onclick="openLB(this)">
+      <img src="https://www.genspark.ai/api/files/s/eCmCrjLB" alt="রেচনতন্ত্র পোস্টার">
+      <div class="zoom-ico">🔍</div>
+      <div class="overlay">
+        <h4>🫘 রেচনতন্ত্রের চিত্র</h4>
+        <p>কিডনি, মূত্রনালী ও মূত্রথলির শিক্ষামূলক চিত্র</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB(event)">
+  <span class="close" onclick="closeLB(event)">×</span>
+  <img id="lbImg" src="" alt="বড় ছবি">
+  <div class="caption" id="lbCap"></div>
+</div>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="closing">
+    <h2>🌟 বিজ্ঞানই শক্তি, বিজ্ঞানই আলো</h2>
+    <p>এই বিজ্ঞান মেলা আমাদের সমাজকে শেখায় যে, প্রতিটি শিশুর মধ্যে একটি গবেষক লুকিয়ে আছে। সঠিক দিকনির্দেশনা ও সুযোগ পেলে তারা নিজেদের আশেপাশের জগৎকে আরও ভালোভাবে বুঝতে পারবে এবং একদিন তারা দেশ ও জাতির গর্ব হয়ে উঠবে।</p>
+    <div class="signature">✨ বিজ্ঞান মেলা ২০২৬ · সফল হোক প্রতিটি শিশুর স্বপ্ন ✨</div>
+  </div>
+</section>
+
+<footer>
+  <p>© ২০২৬ — তৈরি করা হয়েছে <span class="heart">❤</span> এর সাথে শিনেপুকুর তানযীমুল উম্মাহ দাখিল মাদ্রাসার বিজ্ঞান মেলার স্মৃতিতে</p>
+  <p style="font-size:.85rem;color:var(--ink-soft);">📚 শিক্ষা · গবেষণা · সৃজনশীলতা — আলোর পথে এগিয়ে যাই</p>
+</footer>
+
+<a href="#about" class="fab" title="উপরে যান">⬆</a>
+
+<script>
+/* ============ PARTICLES ============ */
+(function createParticles(){
+  const box=document.getElementById('particles');
+  if(!box) return;
+  for(let i=0;i<35;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size=Math.random()*6+2;
+    p.style.width=size+'px';
+    p.style.height=size+'px';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(Math.random()*12+8)+'s';
+    p.style.animationDelay=(-Math.random()*15)+'s';
+    p.style.opacity=Math.random()*.7+.3;
+    box.appendChild(p);
+  }
+})();
+
+/* ============ CUSTOM CURSOR ============ */
+(function setupCursor(){
+  if(matchMedia('(max-width:768px)').matches) return;
+  const dot=document.querySelector('.cursor-dot');
+  const ring=document.querySelector('.cursor-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+  function loop(){
+    rx+=(mx-rx)*.15;
+    ry+=(my-ry)*.15;
+    ring.style.left=rx+'px';
+    ring.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+  document.querySelectorAll('a,button,.gitem,.imp-card,.intro-card,.stat-box,.signature,.hero-stat,.fab,.hero-badge').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{
+      dot.style.width='16px';dot.style.height='16px';
+      ring.style.width='60px';ring.style.height='60px';ring.style.borderColor='var(--accent)';
+    });
+    el.addEventListener('mouseleave',()=>{
+      dot.style.width='10px';dot.style.height='10px';
+      ring.style.width='40px';ring.style.height='40px';ring.style.borderColor='var(--primary)';
+    });
+  });
+})();
+
+/* ============ INTERSECTION OBSERVER (REVEAL) ============ */
+(function revealOnScroll(){
+  const els=document.querySelectorAll('.section-title,.intro-card,.imp-card,.gitem,.stat-box,.tl-item,.closing');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        const el=e.target;
+        /* staggered delay */
+        const sibs=Array.from(el.parentNode.children).filter(c=>c.classList.contains(e.target.classList[0]));
+        const idx=sibs.indexOf(el);
+        el.style.transitionDelay=(idx*.08)+'s';
+        el.classList.add('reveal');
+        io.unobserve(el);
+      }
+    });
+  },{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+  els.forEach(el=>io.observe(el));
+})();
+
+/* ============ COUNTERS ============ */
+(function animateCounters(){
+  const counters=document.querySelectorAll('[data-count],[data-target]');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el=e.target;
+      const target=+el.dataset.count||+el.dataset.target;
+      const dur=1600;
+      const start=performance.now();
+      function tick(now){
+        const p=Math.min((now-start)/dur,1);
+        const eased=1-Math.pow(1-p,3);
+        el.textContent=Math.floor(eased*target);
+        if(p<1) requestAnimationFrame(tick);
+        else el.textContent=target;
+      }
+      requestAnimationFrame(tick);
+      io.unobserve(el);
+    });
+  },{threshold:.4});
+  counters.forEach(c=>io.observe(c));
+})();
+
+/* ============ LIGHTBOX ============ */
+function openLB(el){
+  const img=el.querySelector('img');
+  const cap=el.querySelector('h4')?el.querySelector('h4').textContent:'';
+  document.getElementById('lbImg').src=img.src;
+  document.getElementById('lbCap').textContent=cap;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLB(e){
+  if(e.target.id==='lightbox'||e.target.classList.contains('close')){
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow='';
+  }
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow='';
+  }
+});
+
+/* ============ TILT on CARDS ============ */
+(function tiltCards(){
+  if(matchMedia('(max-width:768px)').matches) return;
+  document.querySelectorAll('.imp-card,.stat-box,.gitem').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`translateY(-8px) rotateX(${(-y*8).toFixed(2)}deg) rotateY(${(x*8).toFixed(2)}deg)`;
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.transform='';
+    });
+  });
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
